@@ -1,0 +1,41 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  .offset(0; 10px 0);
+  background-color: @white3;
+
+  @media (min-width: @tablet-width) {
+    padding: 20px 0;
+  }
+}
+
+.header__fixed {
+  background-color: @white;
+  box-shadow: 0 1px 10px 1px @grey1;
+  z-index: 5000;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header__logo {
+  width: 100px;
+  height: 26px;
+  margin-right: auto;
+
+  @media (min-width: @tablet-width) {
+    order: 1;
+    width: 199px;
+    height: 72px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-right: 34px;
+    margin-bottom: 0;
+  }
+}
