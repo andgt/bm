@@ -1,3 +1,33 @@
 .main {
   .offset(0; 0);
 }
+
+.main__subtitle {
+  position: relative;
+  .offset(0; 0);
+  font-weight: 300;
+  .typography(35px; 35px);
+  letter-spacing: -0.04em;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -23px;
+    left: 0;
+    width: 95.30791788856305%;
+    height: 2px;
+    background-color: @red1;
+  }
+
+  @media (min-width: @tablet-width) {
+    .typography(55px; 55px);
+  }
+}
+
+.main__subtitle--about {
+  margin-bottom: 48px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 78px;
+  }
+}
