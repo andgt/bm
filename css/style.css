@@ -129,6 +129,11 @@ a {
     padding: 20px 0;
   }
 }
+@media (min-width: 1400px) {
+  .header {
+    padding: 11px 0 12px 0;
+  }
+}
 .header__fixed {
   background-color: #ffffff;
   box-shadow: 0 1px 10px 1px #bbc1d2;
@@ -478,7 +483,7 @@ a {
 }
 .promo {
   margin: 0;
-  padding: 72px 0 0 0;
+  padding: 72px 0 20px 0;
   background-image: url("../img/mobile/promo-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -492,13 +497,21 @@ a {
 }
 @media (min-width: 1400px) {
   .promo {
-    padding-top: 8.37004405%;
+    margin-bottom: 44px;
+    padding-top: 114px;
+    padding-bottom: 0;
+    background-position: center top;
   }
 }
 .promo__container {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+@media (min-width: 1400px) {
+  .promo__container {
+    row-gap: 54px;
+  }
 }
 .promo__description {
   margin: 0 0 34px;
@@ -510,6 +523,12 @@ a {
 @media (min-width: 768px) {
   .promo__description {
     margin-bottom: 64px;
+  }
+}
+@media (min-width: 1400px) {
+  .promo__description {
+    max-width: 190px;
+    padding: 0;
   }
 }
 .promo__title {
@@ -524,11 +543,12 @@ a {
   font-size: 16px;
   line-height: 16px;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 @media (min-width: 768px) {
   .promo__title-text {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 26px;
+    line-height: 26px;
   }
 }
 .promo__title-main {
@@ -557,6 +577,7 @@ a {
 .promo__wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   -moz-column-gap: 20px;
        column-gap: 20px;
   row-gap: 30px;
@@ -573,6 +594,14 @@ a {
 @media (min-width: 768px) {
   .promo__list-advantages {
     padding: 29px 32px 33px 28px;
+  }
+}
+@media (min-width: 1400px) {
+  .promo__list-advantages {
+    -moz-column-gap: 54px;
+         column-gap: 54px;
+    margin-top: 75px;
+    margin-bottom: auto;
   }
 }
 .promo__list {
@@ -603,6 +632,11 @@ a {
     font-size: 16px;
     line-height: 36px;
   }
+  .promo__item::before {
+    width: 8px;
+    height: 8px;
+    top: 14px;
+  }
 }
 .promo__link-object {
   position: relative;
@@ -617,6 +651,7 @@ a {
   text-align: center;
   background-color: #cc123b;
   border-radius: 50%;
+  transition: 0.4s ease;
 }
 .promo__link-object::before {
   content: "";
@@ -627,6 +662,13 @@ a {
   height: 14px;
   background-image: url("data:image/svg+xml,%3Csvg width='26' height='14' viewBox='0 0 26 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L13 13L25 1' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
+  transition: 0.4s ease;
+}
+.promo__link-object:hover {
+  transform: scale(1.05);
+}
+.promo__link-object:hover::before {
+  bottom: 20px;
 }
 @media (min-width: 768px) {
   .promo__link-object {
@@ -638,6 +680,11 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+}
+@media (min-width: 1400px) {
+  .promo__advantages {
+    margin-bottom: -44px;
+  }
 }
 .promo__advantages-card--1 {
   background: linear-gradient(180deg, rgba(253, 251, 250, 0.92) 46.61%, rgba(253, 251, 250, 0) 72.5%), url("../img/mobile/promo-advantages-card-1.jpg");
@@ -669,11 +716,16 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  transition: 0.3s ease;
 }
 @media (min-width: 768px) {
   .promo__advantages-card {
     padding: 46px 35px 147px 57px;
   }
+}
+.promo__advantages-card:hover {
+  box-shadow: 1px 1px 20px 3px #0e5fc4;
+  transform: scale(1.01);
 }
 .promo__advantages-title {
   margin: 0 0 20px 0;
@@ -681,21 +733,25 @@ a {
   font-size: 22px;
   line-height: 22px;
 }
+.promo__advantages-title-text--color {
+  color: #cc123b;
+}
 .promo__advantages-text {
   margin: 0 0 22px 0;
   padding: 0;
   font-size: 15px;
   line-height: 22px;
 }
-.promo__advantages__link {
+.promo__advantages-link {
   display: inline-block;
   position: relative;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #cc123b;
+  transition: 0.3s ease;
 }
-.promo__advantages__link::before {
+.promo__advantages-link::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -703,6 +759,12 @@ a {
   width: 100%;
   height: 1px;
   background-color: #cc123b;
+}
+.promo__advantages-link:hover {
+  color: #0e5fc4;
+}
+.promo__advantages-link:hover::before {
+  background-color: #0e5fc4;
 }
 
 /*# sourceMappingURL=style.css.map */
