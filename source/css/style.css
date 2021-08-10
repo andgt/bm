@@ -142,6 +142,14 @@ a {
     margin-bottom: 78px;
   }
 }
+.main__subtitle--objects {
+  margin-bottom: 42px;
+}
+@media (min-width: 768px) {
+  .main__subtitle--objects {
+    margin-bottom: 72px;
+  }
+}
 .button {
   display: block;
   margin: 0;
@@ -149,6 +157,7 @@ a {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
+  font-family: "ProbaPro", "Arial", sans-serif;
   color: #000000;
   text-align: center;
   background-color: transparent;
@@ -157,9 +166,89 @@ a {
   border-radius: 10px;
   transition: 0.3s ease;
 }
-.button:hover {
-  transform: translateY(3px);
-  transition: 0.3s ease;
+.button__tab-wrapper {
+  margin-bottom: 52px;
+}
+@media (min-width: 768px) {
+  .button__tab-wrapper {
+    margin-bottom: 92px;
+  }
+}
+.button__tab-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.button__tab {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #161b27;
+  border-radius: 0;
+  z-index: 1;
+}
+.button__tab::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  background-color: #e3e2e7;
+  border-radius: 60px;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+.button__tab:hover::after {
+  width: calc(100% + 10px);
+}
+@media (min-width: 768px) {
+  .button__tab {
+    padding-left: 20px;
+  }
+  .button__tab::after {
+    width: 40px;
+    height: 40px;
+  }
+  .button__tab:hover::after {
+    width: calc(100% + 20px);
+  }
+}
+.button__tab--active::before {
+  content: attr(data-content);
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 26px;
+  height: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #efeef3;
+  transition: width 275ms ease;
+  z-index: 100;
+}
+.button__tab--active::after {
+  background-color: #cc123b;
+}
+.button__tab--active:hover::before {
+  width: calc(100% - 10px);
+  left: 10px;
+}
+@media (min-width: 768px) {
+  .button__tab--active::before {
+    left: 20px;
+    width: 18px;
+  }
+  .button__tab--active:hover::before {
+    width: calc(100% - 20px);
+    left: 20px;
+  }
 }
 .header {
   position: fixed;
@@ -937,7 +1026,6 @@ a {
 .about__link {
   position: relative;
   display: inline-block;
-  /*margin-right: 6px;*/
   padding: 0 6px 0 22px;
   font-weight: 700;
   font-size: 14px;
@@ -955,7 +1043,7 @@ a {
   white-space: nowrap;
   overflow: hidden;
   color: #efeef3;
-  transition: width 275ms ease;
+  transition: width 0.3s ease;
   z-index: 100;
 }
 .about__link::after {
@@ -975,7 +1063,7 @@ a {
   height: 32px;
 }
 .about__link:hover::after {
-  width: 125%;
+  width: calc(100% + 38px);
 }
 @media (min-width: 768px) {
   .about__link {
@@ -1088,6 +1176,78 @@ a {
     width: 829px;
     height: 329px;
   }
+}
+.objects {
+  margin: 0;
+  padding: 40px 0 60px 0;
+  background-image: url("../img/mobile/objects-apartment-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+@media (min-width: 768px) {
+  .objects {
+    padding: 70px 0 90px 0;
+  }
+}
+.objects__card {
+  margin: 0;
+  padding: 39px 20px 37px 25px;
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .objects__card {
+    padding: 69px 40px 77px 55px;
+  }
+}
+.objects__card-title {
+  margin: 0 0 16px 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .objects__card-title {
+    margin-bottom: 22px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+.object__address {
+  margin: 0 0 16px 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 18px;
+  font-style: normal;
+}
+@media (min-width: 768px) {
+  .object__address {
+    margin-bottom: 22px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.objects__card-wrapper {
+  margin: 0 0 21px 0;
+  padding: 0;
+}
+.objects__card-wrapper:last-of-type {
+  margin-bottom: 0;
+}
+.objects__card-subtitle {
+  margin: 0 0 21px 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+.objects__card-description {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,62 @@
+.objects {
+  .offset(0; 40px 0 60px 0);
+  background-image: url("../img/mobile/objects-apartment-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  @media (min-width: @tablet-width) {
+    padding: 70px 0 90px 0;
+  }
+}
+
+.objects__card {
+  .offset(0; 39px 20px 37px 25px);
+  background-color: @white;
+
+  @media (min-width: @tablet-width) {
+    padding: 69px 40px 77px 55px;
+  }
+}
+
+.objects__card-title {
+  .offset(0 0 16px 0; 0);
+  font-weight: 700;
+  .typography(18px; 18px);
+  text-transform: uppercase;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 22px;
+    .typography(24px; 24px);
+  }
+}
+
+.object__address {
+  .offset(0 0 16px 0; 0);
+  .typography(14px; 18px);
+  font-style: normal;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 22px;
+    .typography(16px; 20px);
+  }
+}
+
+.objects__card-wrapper {
+  .offset(0 0 21px 0; 0);
+}
+
+.objects__card-wrapper:last-of-type {
+  margin-bottom: 0;
+}
+
+.objects__card-subtitle {
+  .offset(0 0 21px 0; 0);
+  font-weight: 700;
+  .typography(14px; 21px);
+}
+
+.objects__card-description {
+  .offset(0; 0);
+  .typography(14px; 21px);
+}

@@ -125,7 +125,6 @@
 .about__link {
   position: relative;
   display: inline-block;
-  /*margin-right: 6px;*/
   padding: 0 6px 0 22px;
   font-weight: 700;
   .typography(14px; 14px);
@@ -142,7 +141,7 @@
     white-space: nowrap;
     overflow: hidden;
     color: @grey;
-    transition: width 275ms ease;
+    transition: width 0.3s ease;
     z-index: 100;
   }
 
@@ -166,7 +165,7 @@
     }
 
     &::after {
-      width: 125%;
+      width: calc(100% + 38px);
     }
   }
 
