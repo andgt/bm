@@ -33,6 +33,13 @@
   font-display: swap;
   src: url("../fonts/ProbaPro-Bold.woff2") format("woff2"), url("../fonts/ProbaPro-Bold.woff") format("woff");
 }
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+}
 *,
 *::before,
 *::after {
@@ -829,8 +836,45 @@ a {
 }
 @media (min-width: 1400px) {
   .about__list {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
   }
+}
+.about__item {
+  position: relative;
+}
+@media (min-width: 1400px) {
+  .about__item {
+    counter-increment: num;
+    flex-grow: 1;
+  }
+  .about__item::before {
+    content: counter(num) " ";
+    position: absolute;
+    top: 0;
+    left: -39px;
+    width: 427.99px;
+    height: 410px;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 350px;
+    line-height: 410px;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+.about__item:nth-child(-n+9)::before {
+  content: "0" counter(num);
+}
+@media (min-width: 1400px) {
+  .about__item:nth-child(even)::before {
+    left: 699px;
+  }
+}
+.about__item:nth-child(even) .about__inner {
+  flex-direction: row-reverse;
 }
 @media (min-width: 1400px) {
   .about__inner {
@@ -949,6 +993,10 @@ a {
   }
 }
 @media (min-width: 1400px) {
+  .about__img-wrapper {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 21% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 21% 100%);
+  }
   .about__img-wrapper::before {
     content: "";
     position: absolute;
@@ -959,6 +1007,26 @@ a {
     background-image: url("../img/tablet/about-img-mask.svg");
     background-size: cover;
     background-repeat: no-repeat;
+  }
+  .about__img-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 1400px) {
+  .about__item:nth-child(even) .about__img-wrapper {
+    -webkit-clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 81% 100%, 0% 100%);
+  }
+}
+@media (min-width: 1400px) {
+  .about__item:nth-child(even) .about__img-wrapper::before {
+    transform: scale(-1, 1);
+    left: 0;
   }
 }
 .about__img {
