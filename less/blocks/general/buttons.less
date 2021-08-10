@@ -3,6 +3,7 @@
   .offset(0; 0);
   .typography(14px; 24px);
   font-weight: 400;
+  font-family: "ProbaPro", "Arial", sans-serif;
   color: @black;
   text-align: center;
   background-color: transparent;
@@ -10,9 +11,106 @@
   border: 0;
   border-radius: 10px;
   transition: 0.3s ease;
+}
+
+.button__tab-wrapper {
+  margin-bottom: 52px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 92px;
+  }
+}
+
+.button__tab-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.button__tab {
+  position: relative;
+  display: inline-block;
+  padding: 0 0 0 10px;
+  font-weight: 700;
+  .typography(16px; 21px);
+  color: @black1;
+  border-radius: 0;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 38px;
+    height: 38px;
+    background-color: @grey2;
+    border-radius: 60px;
+    transition: width 0.3s ease;
+    z-index: -1;
+  }
 
   &:hover {
-    transform: translateY(3px);
-    transition: 0.3s ease;
+    &::after {
+      width: calc(100% + 10px);
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-left: 20px;
+
+    &::after {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      &::after {
+        width: calc(100% + 20px);
+      }
+    }
+  }
+}
+
+.button__tab--active {
+  &::before {
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 26px;
+    height: 100%;
+    font-weight: 700;
+    .typography(16px; 21px);
+    white-space: nowrap;
+    overflow: hidden;
+    color: @grey;
+    transition: width 275ms ease;
+    z-index: 100;
+  }
+
+  &::after {
+    background-color: @red;
+  }
+
+  &:hover {
+    &::before {
+      width: calc(100% - 10px);
+      left: 10px;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    &::before {
+      left: 20px;
+      width: 18px;
+    }
+
+    &:hover {
+      &::before {
+        width: calc(100% - 20px);
+        left: 20px;
+      }
+    }
   }
 }
