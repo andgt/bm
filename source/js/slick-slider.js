@@ -1,3 +1,6 @@
+window.$ = jQuery;
+window.jQuery = jQuery;
+
 $(document).ready(function() {
   $('.slick-1').slick({
     arrows: true,
@@ -58,4 +61,39 @@ $(document).ready(function() {
       }
     ]
   });
+});
+
+
+$(document).ready(function() {
+  $('.slick-doc').slick({
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 320,
+          settings: {
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 1000,
+          }
+      },
+      {
+        breakpoint: 768,
+          settings: "unslick"
+      },
+    ]
+  });
+});
+
+$(window).resize(function() {
+  if (window.innerWidth < 768) {
+    $('.slick-doc').not('.slick-initialized').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      speed: 1000
+    })
+  } else {
+      $('.slick-doc').slick('unslick');
+    }
 });
