@@ -121,3 +121,55 @@
     display: none;
   }
 }
+
+.contacts-main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.contacts__map {
+  width: 100%;
+  height: 450px;
+
+  @media (min-width: @tablet-width) {
+    height: 700px;
+  }
+}
+
+.contacts__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .offset(30px 14px 26px 15px; 0);
+  border-radius: 3px;
+  background-color: @white;
+
+  @media (min-width: @tablet-width) {
+    padding: 50px 53px 53px 56px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 434px;
+    margin: -447px 0 0 0;
+    z-index: 6;
+  }
+}
+
+.contacts__text-map {
+  .typography(16px; 20px);
+}
+
+.contacts__address-map {
+  .offset(0 0 32px 0; 0);
+  font-style: normal;
+}
+
+.contacts__schedule {
+  display: flex;
+  flex-direction: column;
+  .offset(0 0 32px 0; 0);
+}
+
+.contacts__phone-1--map {
+  margin-bottom: 32px;
+}

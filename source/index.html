@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>BM-Build</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!--<link rel="stylesheet" type="text/css" href="slick/slick.css"/>-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a819f411-0ec3-4327-9ecd-5fef3f7d3f84&width=100%&lang=ru_RU" type="text/javascript"></script>
   </head>
   <body class="page__body">
     <header class="header">
@@ -434,23 +434,27 @@
         </div>
       </section>
       <section class="contacts-main">
-        <div class="contacts-main__map" id="map"></div>
+        <div class="contacts__map" id="map"></div>
           <div class="container">
             <div class="contacts__wrapper">
-              <h2 class="main__subtitle">Контакты</h2>
-              <address class="contacts__address">Симферополь ул.Ген.Васильева, 23а</address>
+              <h2 class="main__subtitle main__subtitle--contacts">Контакты</h2>
+              <address class="contacts__text-map contacts__address-map">Симферополь ул.Ген.Васильева, 23а</address>
               <div class="contacts__schedule">
-                <span class="contacts__text contacts__text--main">Пн-Пт: с 9:00 до 18:00</span>
-                <span class="contacts__text contacts__text--main">Суббота, воскресенье: Выходной</span>
+                <span class="contacts__text-map contacts__text--main">Пн-Пт: с 9:00 до 18:00</span>
+                <span class="contacts__text-map contacts__text--main">Суббота, воскресенье: Выходной</span>
               </div>
-              <div class="contacts__phone">
-                <div class="contacts__phone-1">
-                  <span class="contacts__text contacts__text--main">Менеджер</span>
-                  <span class="contacts__text contacts__text--main">8-978-871-00-07</span>
+              <div class="contact__details">
+                <div class="contacts__phone-1 contacts__phone-1--map">
+                  <span class="contacts__text-map">Менеджер</span>
+                  <a class="contacts__link contacts__link--number" href="tel:+79788710007">
+                    <span class="contacts__text-map contacts__text--phone">8-978-871-00-07</span>
+                  </a>
                 </div>
                 <div class="contacts__mail">
-                  <span class="contacts__text contacts__text--main">Наш E-mail:</span>
-                  <span class="contacts__text contacts__text--main">am@bm-build.ru</span>
+                  <span class="contacts__text-map">Наш E-mail:</span>
+                  <a class="contacts__link" href="mailto:am@bm-build.ru">
+                    <span class="contacts__text-map contacts__text--mail">am@bm-build.ru</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -523,5 +527,6 @@
     <script src="js/script.js"></script>
     <script src="js/slick-slider.js"></script>
     <script src="slick/slick.min.js"></script>
+    <script src="js/map.js"></script>
   </body>
 </html>
