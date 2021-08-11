@@ -1,0 +1,58 @@
+.slick-list {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.slick-track {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.slick-1 .slick-track {
+  min-height: 375px;
+
+  @media (min-width: @tablet-width) {
+    min-height: 468px;
+  }
+}
+
+.slick-arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='20' fill='%23CC123B'/%3E%3Cpath d='M23 12L15 20L23 28' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  z-index: 10;
+}
+
+.slick-1 .slick-arrow {
+  bottom: 15px;
+  right: 124px;
+}
+
+.slick-1 .slick-prev {
+  right: 84px;
+}
+
+.slick-1 .slick-next {
+  right: 21px;
+  transform: rotate(180deg);
+}
+
+.slick-min .slick-arrow {
+  top: 42%;
+}
+
+.slick-min .slick-prev {
+  left: 30px;
+}
+
+.slick-min .slick-next {
+  right: 30px;
+  transform: rotate(180deg);
+}
