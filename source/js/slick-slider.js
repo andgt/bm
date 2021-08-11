@@ -30,3 +30,32 @@ $(document).ready(function() {
     ]
   });
 });
+
+$(document).ready(function() {
+  $('.slick-2').slick({
+    arrows: true,
+    speed: 1000,
+    slidesToShow: 1,
+    rows: 2,
+    autoplay: false,
+    initialSlide: 0,
+    variableWidth: true,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+        }
+      }
+    ]
+  });
+});

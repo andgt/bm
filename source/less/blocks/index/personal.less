@@ -1,0 +1,184 @@
+.personal {
+  .offset(0; 60px 0 40px 0);
+  background: url("../img/mobile/personal-bg.jpg");
+  background-size: cover;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 118px;
+    background: url("../img/tablet/personal-bg.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-bottom: 0;
+  }
+}
+
+.personal__slider {
+  max-width: 300px;
+  margin: 0 auto 60px auto;
+
+  @media (min-width: @tablet-width) {
+    max-width: 668px;
+    margin: 0 auto 133px auto;
+  }
+
+  @media (min-width: 970px) {
+    max-width: 930px;
+    margin: 0 auto 133px auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    max-width: 100%;
+  }
+}
+
+.personal__partner-wrapper {
+  max-width: 300px;
+  margin: 0 auto;
+  height: 160px;
+
+  @media (min-width: @tablet-width) {
+    height: 230px;
+    margin: 0 17px 31px 17px;
+  }
+
+  @media (min-width: 970px) {
+    max-width: 431px;
+    margin: 0 17px 31px 17px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin: 0 17px 31px 17px;
+  }
+}
+
+.personal__inner-text {
+  @media (min-width: @desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 462px;
+    overflow-y: hidden;
+  }
+}
+
+.personal__card {
+  position: relative;
+  .offset(0; 29px 23px 22px 21px);
+  background: linear-gradient(180deg, @white1 0%, @white3 100%);
+  z-index: 3;
+
+  @media (min-width: @tablet-width) {
+    max-width: 893px;
+    margin-bottom: auto;
+    padding: 49px 66px 52px 61px;
+  }
+}
+
+.personal__subtitle {
+  .offset(0 0 10px 0; 0);
+  font-weight: 300;
+  .typography(20px; 20px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: @grey3;
+}
+
+.personal__name {
+  .offset(0 0 33px 0; 0);
+  font-weight: 700;
+  .typography(18px; 18px);
+  color: @black1;
+}
+
+.personal__text-wrapper {
+  @media (min-width: @desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 49px;
+  }
+}
+
+.personal__text {
+  .offset(0 0 24px 0; 0);
+  .typography(16px; 24px);
+}
+
+.personal__contacts {
+  padding: 0;
+}
+
+.personal__contacts-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.personal__text--mail {
+  position: relative;
+  color: @red;
+  .typography(14px; 20px);
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: @red;
+  }
+}
+
+.personal__text--phone {
+  display: block;
+  .typography(14px; 20px);
+  font-weight: 700;
+  color: @black;
+}
+
+.personal__link--number {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    width: 0;
+    height: 0;
+    background-color: @red;
+    transition: 0.4s ease;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      width: 99%;
+      height: 1px;
+    }
+  }
+}
+
+.personal__team {
+  display: none;
+
+  @media (min-width: @desktop-width) {
+    display: block;
+    width: 520px;
+    height: 520px;
+    .offset(134px 0 0 -53px; 0);
+    background-color: @red2;
+    border-radius: 50%;
+  }
+}
+
+.personal__team-text {
+  .offset(0; 125px 100px 192px 81px);
+  .typography(39px; 39px);
+  font-weight: 300;
+  color: @white2;
+  text-align: right;
+}
