@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>BM-Build</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="slick/slick.css"/>-->
   </head>
   <body class="page__body">
     <header class="header">
@@ -227,7 +228,7 @@
         </div>
       </section>
       <section class="objects">
-        <div class="container">
+        <div class="container objects__container">
           <h2 class="main__subtitle main__subtitle--objects">Наши объекты</h2>
           <div class="button__tab-wrapper">
             <div class="button__tab-container">
@@ -248,25 +249,62 @@
               </div>
             </div>
           </div>
-          <div class="objects__card tab-1">
-            <div class="objects__card-text">
-              <h2 class="objects__card-title">ЖК «Город Мира»</h2>
-              <address class="object__address">Симферополь ул.Ген.Васильева, 23а</address>
-              <div class="objects__card-wrapper">
-                <h3 class="objects__card-subtitle">С какой задачей обратился клиент:</h3>
-                <p class="objects__card-description">Построить новый микрорайон в Симферополе с комфортным, уютным и безопасным пространством.</p>
-              </div>
-              <div class="objects__card-wrapper">
-                <h3 class="objects__card-subtitle">Что в итоге получил клиент:</h3>
-                <p class="objects__card-description">Менее чем за 3 года, нам удалось сдать 16 многоквартирных домов с развитым придворовым пространством</p>
+          <div class="objects__card-slider tab-1">
+            <div class="objects__slider objects__slider--tab-1">
+              <div class="objects__card-container">
+                <div class="objects__card">
+                  <div class="objects__card-text">
+                    <h2 class="objects__card-title">ЖК «Город Мира»</h2>
+                    <address class="object__address">Симферополь ул.Ген.Васильева, 23а</address>
+                    <div class="objects__card-wrapper">
+                      <h3 class="objects__card-subtitle">С какой задачей обратился клиент:</h3>
+                      <p class="objects__card-description">Построить новый микрорайон в Симферополе с комфортным, уютным и безопасным пространством.</p>
+                    </div>
+                    <div class="objects__card-wrapper">
+                      <h3 class="objects__card-subtitle">Что в итоге получил клиент:</h3>
+                      <p class="objects__card-description">Менее чем за 3 года, нам удалось сдать 16 многоквартирных домов с развитым придворовым пространством</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="objects__img-wrapper slick-1">
+                  <img class="objects__slider-img" src="img/tablet/object-slider-card.jpg" width="674" height="468" alt="Фото объекта">
+                  <img class="objects__slider-img" src="img/tablet/object-slider-card.jpg" width="674" height="468" alt="Фото объекта">
+                  <img class="objects__slider-img" src="img/tablet/object-slider-card.jpg" width="674" height="468" alt="Фото объекта">
+                  <img class="objects__slider-img" src="img/tablet/object-slider-card.jpg" width="674" height="468" alt="Фото объекта">
+                  <img class="objects__slider-img" src="img/tablet/object-slider-card.jpg" width="674" height="468" alt="Фото объекта">
+                </div>
               </div>
             </div>
           </div>
-          <div class="objects__slider">
-            <img src="" width="" height="" alt="">
+        </div>
+        <div class="objects__slider-2 slick-min">
+          <div class="objects__slider-2-wrapper">
+            <img class="object__slider-img object__slider-img--line" src="img/all/objects-slider-1.jpg" width="382" height="200" alt="Фото объекта">
+            <a class="objects__slider-2-link" href="#">ЖК «Город Мира»</a>
           </div>
-          <div class="objects__slider-2">
-            <img src="" width="" height="" alt="">
+          <div class="objects__slider-2-wrapper">
+            <img class="object__slider-img object__slider-img--line" src="img/all/objects-slider-2.jpg" width="382" height="200" alt="Фото объекта">
+            <a class="objects__slider-2-link" href="#">ЖК «Город Мира»</a>
+          </div>
+          <div class="objects__slider-2-wrapper">
+            <img class="object__slider-img object__slider-img--line" src="img/all/objects-slider-3.jpg" width="382" height="200" alt="Фото объекта">
+            <a class="objects__slider-2-link" href="#">ЖК «Город Мира»</a>
+          </div>
+          <div class="objects__slider-2-wrapper">
+            <img class="object__slider-img object__slider-img--line" src="img/all/objects-slider-4.jpg" width="382" height="200" alt="Фото объекта">
+            <a class="objects__slider-2-link" href="#">ЖК «Город Мира»</a>
+          </div>
+          <div class="objects__slider-2-wrapper">
+            <img class="object__slider-img object__slider-img--line" src="img/all/objects-slider-5.jpg" width="382" height="200" alt="Фото объекта">
+            <a class="objects__slider-2-link" href="#">ЖК «Город Мира»</a>
+          </div>
+          <div class="objects__slider-2-wrapper">
+            <img class="object__slider-img object__slider-img--line" src="img/all/objects-slider-4.jpg" width="382" height="200" alt="Фото объекта">
+            <a class="objects__slider-2-link" href="#">ЖК «Город Мира»</a>
+          </div>
+          <div class="objects__slider-2-wrapper">
+            <img class="object__slider-img object__slider-img--line" src="img/all/objects-slider-5.jpg" width="382" height="200" alt="Фото объекта">
+            <a class="objects__slider-2-link" href="#">ЖК «Город Мира»</a>
           </div>
         </div>
       </section>
@@ -425,6 +463,9 @@
         </div>
       </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/slick-slider.js"></script>
+    <script src="slick/slick.min.js"></script>
   </body>
 </html>
