@@ -2,7 +2,7 @@ window.$ = jQuery;
 window.jQuery = jQuery;
 
 $(document).ready(function() {
-  $('.slick-1').slick({
+  $('.slick-objects').slick({
     arrows: true,
     speed: 1000,
     slidesToShow: 1,
@@ -10,6 +10,8 @@ $(document).ready(function() {
     initialSlide: 1,
   });
 });
+
+/*$(".slick-objects").slick('reinit');*/
 
 $(document).ready(function() {
   $('.slick-min').slick({
@@ -35,7 +37,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $('.slick-2').slick({
+  $('.slick-partners').slick({
     arrows: true,
     speed: 1000,
     slidesToShow: 1,
