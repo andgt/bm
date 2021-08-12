@@ -1129,6 +1129,7 @@ a {
 @media (min-width: 1400px) {
   .promo {
     height: 100vh;
+    min-height: 800px;
     margin-bottom: 5px;
     padding-top: 114px;
     padding-bottom: 0;
@@ -1299,6 +1300,7 @@ a {
 }
 .promo__link-object:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 13px 4px #cc123b;
 }
 .promo__link-object:hover::before {
   bottom: 20px;
