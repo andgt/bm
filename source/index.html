@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>BM-Build</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a819f411-0ec3-4327-9ecd-5fef3f7d3f84&width=100%&lang=ru_RU" type="text/javascript"></script>
   </head>
   <body class="page__body">
@@ -118,7 +119,7 @@
           </div>
         </div>
       </section>
-      <section class="about">
+      <section class="about wow slideInLeft" data-wow-delay="5ms">
         <div class="container">
           <h2 class="main__subtitle main__subtitle--about">Что мы строим?</h2>
         </div>
@@ -227,7 +228,7 @@
           </ul>
         </div>
       </section>
-      <section class="objects">
+      <section class="objects wow slideInRight" data-wow-delay="5ms">
         <div class="container objects__container">
           <h2 class="main__subtitle main__subtitle--objects">Наши объекты</h2>
           <div class="button__tab-wrapper">
@@ -308,7 +309,7 @@
           </div>
         </div>
       </section>
-      <section class="personal">
+      <section class="personal wow slideInLeft" data-wow-delay="5ms">
         <div class="container">
           <div class="personal__inner">
             <h2 class="main__subtitle main__subtitle--personal">Наши партнеры</h2>
@@ -385,7 +386,7 @@
           </div>
         </div>
       </section>
-      <section class="documents">
+      <section class="documents wow slideInRight" data-wow-delay="5ms">
         <div class="container documents__inner slick-doc">
           <article class="documents__card">
             <div class="documents__img-wrapper">
@@ -433,7 +434,7 @@
           </article>
         </div>
       </section>
-      <section class="contacts-main">
+      <section class="contacts-main wow slideInLeft" data-wow-delay="5ms">
         <div class="contacts__map" id="map"></div>
           <div class="container">
             <div class="contacts__wrapper">
@@ -461,8 +462,8 @@
           </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="container footer__wrapper">
+    <footer class="footer" data-wow-delay="5ms">
+      <div class="container footer__wrapper wow slideInRight">
         <div class="footer__logo">
           <img class="logo" src="img/all/footer-logo.png" width="247" height="89" alt="Логотип">
           <p class="footer__logo-description">Строительство промышленных и&nbsp;гражданских объектов</p>
@@ -539,5 +540,9 @@
     <script src="js/slick-slider.js"></script>
     <script src="slick/slick.min.js"></script>
     <script src="js/map.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
   </body>
 </html>
