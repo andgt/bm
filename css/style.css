@@ -290,7 +290,7 @@ a {
   width: 100%;
   margin: 0;
   padding: 10px 0;
-  background-color: #faf5f1;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 @media (min-width: 768px) {
   .header {
@@ -1128,9 +1128,11 @@ a {
 }
 @media (min-width: 1400px) {
   .promo {
-    margin-bottom: 44px;
+    height: 100vh;
+    margin-bottom: 5px;
     padding-top: 114px;
     padding-bottom: 0;
+    background-size: 1920px 756px;
     background-position: center top;
   }
 }
