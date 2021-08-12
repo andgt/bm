@@ -32,5 +32,36 @@ let menuFixed = function() {
 
 window.onscroll = function() {
   menuFixed();
-  /*scrollUpButton();*/
 };
+
+let tab = function() {
+  let tabBtn = document.querySelectorAll(".button__tab");
+  let cardsBlock = document.querySelectorAll(".objects__card-slider");
+  let tabName;
+
+  tabBtn.forEach(element => {
+    element.addEventListener("click", selectTab)
+  });
+
+  function selectTab(evt) {
+    evt.preventDefault();
+    tabBtn.forEach(element => {
+      element.classList.remove("button__tab--active");
+    });
+    this.classList.add("button__tab--active");
+    tabName = this.getAttribute("data-tab");
+    selectTabContent(tabName);
+  }
+
+  function selectTabContent(tabName) {
+    cardsBlock.forEach(element => {
+      if (element.classList.contains(tabName)) {
+        element.classList.add("objects__card-slider--active");
+      } else {
+        element.classList.remove("objects__card-slider--active");
+      }
+    });
+  };
+};
+
+tab();

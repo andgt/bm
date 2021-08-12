@@ -3,7 +3,6 @@
 }
 
 .slick-list {
-  max-width: 100%;
   width: 100%;
   overflow-x: hidden;
 }
@@ -13,7 +12,8 @@
   flex-wrap: nowrap;
 }
 
-.slick-1 .slick-track {
+.slick-objects .slick-track {
+  width: 100%;
   min-height: 375px;
 
   @media (min-width: @tablet-width) {
@@ -48,16 +48,16 @@
   }
 }
 
-.slick-1 .slick-arrow {
+.slick-objects .slick-arrow {
   bottom: 15px;
   right: 124px;
 }
 
-.slick-1 .slick-prev {
+.slick-objects .slick-prev {
   right: 84px;
 }
 
-.slick-1 .slick-next {
+.slick-objects .slick-next {
   right: 21px;
 }
 
@@ -73,7 +73,7 @@
   right: 30px;
 }
 
-.slick-2 .slick-arrow {
+.slick-partners .slick-arrow {
   bottom: -10px;
 
   @media (min-width: @tablet-width) {
@@ -82,11 +82,11 @@
   }
 }
 
-.slick-2 .slick-prev {
+.slick-partners .slick-prev {
   right: 61px;
 }
 
-.slick-2 .slick-next {
+.slick-partners .slick-next {
   right: 0;
 }
 
