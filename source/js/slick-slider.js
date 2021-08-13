@@ -8,10 +8,10 @@ $(document).ready(function() {
     slidesToShow: 1,
     autoplay: false,
     initialSlide: 1,
+    centerMode: true,
+    variableWidth: true
   });
 });
-
-/*$(".slick-objects").slick('reinit');*/
 
 $(document).ready(function() {
   $('.slick-min').slick({
