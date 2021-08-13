@@ -34,10 +34,14 @@ window.onscroll = function() {
   menuFixed();
 };
 
+// Табы
+
 let tab = function() {
   let tabBtn = document.querySelectorAll(".button__tab");
   let cardsBlock = document.querySelectorAll(".objects__card-slider");
+  let objectsSlickMin = document.querySelectorAll(".objects__slider-2");
   let tabName;
+  let tabMin;
 
   tabBtn.forEach(element => {
     element.addEventListener("click", selectTab)
@@ -51,7 +55,9 @@ let tab = function() {
 
     this.classList.add("button__tab--active");
     tabName = this.getAttribute("data-tab");
+    tabMin = this.getAttribute("data-slick-min");
     selectTabContent(tabName);
+    selectSlickMin(tabMin);
   }
 
   function selectTabContent(tabName) {
@@ -63,30 +69,28 @@ let tab = function() {
       }
     });
   };
-};
 
-tab();
-
-/*let tabInner = function() {
-  let cardsBlock = document.querySelectorAll(".objects__card-slider");
-
-  function selectTabContent(tabName) {
-    cardsBlock.forEach(element => {
-      if (element.classList.contains(tabName)) {
-        element.classList.add("objects__card-slider--active");
+  function selectSlickMin(tabMin) {
+    objectsSlickMin.forEach(element => {
+      if (element.classList.contains(tabMin)) {
+        element.classList.add("objects__slick-min");
       } else {
-        element.classList.remove("objects__card-slider--active");
+        element.classList.remove("objects__slick-min");
       }
     });
   };
-};*/
+};
+
+tab();
 
 let tabLink = function() {
   let tabLinkBtn = document.querySelectorAll(".about__link");
   let cardsLinkBlock = document.querySelectorAll(".button__tab");
   let cardsBlockSlider = document.querySelectorAll(".objects__card-slider");
+  let objectsSlickMin = document.querySelectorAll(".objects__slider-2");
   let tabLinkName;
   let tabLinkSlider;
+  let tabMin;
   const objects = document.getElementById('objects');
 
 
@@ -101,6 +105,8 @@ let tabLink = function() {
     selectTabContent(tabLinkName);
     tabLinkSlider = this.getAttribute("data-tab-slider");
     selectTabSlider(tabLinkSlider);
+    tabMin = this.getAttribute("data-slick-min");
+    selectSlickMin(tabMin);
   };
 
   function selectTabContent(tabLinkName) {
@@ -121,6 +127,16 @@ let tabLink = function() {
         element.classList.remove("objects__card-slider--active");
       }
     })
+  };
+
+  function selectSlickMin(tabMin) {
+    objectsSlickMin.forEach(element => {
+      if (element.classList.contains(tabMin)) {
+        element.classList.add("objects__slick-min");
+      } else {
+        element.classList.remove("objects__slick-min");
+      }
+    });
   };
 };
 
