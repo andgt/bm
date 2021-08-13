@@ -1823,8 +1823,10 @@ a {
 @media (min-width: 768px) {
   .objects__slider-2 {
     display: block;
+    visibility: hidden;
     position: relative;
     width: 768px;
+    height: 0;
     margin: 0 auto;
   }
 }
@@ -1837,6 +1839,10 @@ a {
   .objects__slider-2 {
     width: 1920px;
   }
+}
+.objects__slick-min {
+  visibility: visible;
+  height: auto;
 }
 .objects__slider-2-wrapper {
   display: none;
@@ -1867,7 +1873,7 @@ a {
   position: absolute;
   display: inline-block;
   top: 94px;
-  left: 129px;
+  left: 95px;
   min-width: 0;
   padding: 0 20px 0 17px;
   font-weight: 500;

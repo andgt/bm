@@ -132,8 +132,10 @@
 
   @media (min-width: @tablet-width) {
     display: block;
+    visibility: hidden;
     position: relative;
     width: 768px;
+    height: 0;
     margin: 0 auto;
   }
 
@@ -144,6 +146,11 @@
   @media (min-width: 1920px) {
     width: 1920px;
   }
+}
+
+.objects__slick-min {
+  visibility: visible;
+  height: auto;
 }
 
 .objects__slider-2-wrapper {
@@ -174,7 +181,7 @@
   position: absolute;
   display: inline-block;
   top: 94px;
-  left: 129px;
+  left: 95px;
   min-width: 0;
   padding: 0 20px 0 17px;
   font-weight: 500;
