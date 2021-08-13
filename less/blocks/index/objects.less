@@ -183,7 +183,8 @@
   top: 94px;
   left: 95px;
   min-width: 0;
-  padding: 0 20px 0 17px;
+  max-width: 185px;
+  padding: 0 20px 12px 17px;
   font-weight: 500;
   .typography(16px; 16px);
   color: @grey;
@@ -220,6 +221,7 @@
 
     &::before {
       width: calc(100% + 17px);
+      min-height: calc(100% + 12px);
       background-color: @white3;
     }
 

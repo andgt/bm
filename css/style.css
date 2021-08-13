@@ -1875,7 +1875,8 @@ a {
   top: 94px;
   left: 95px;
   min-width: 0;
-  padding: 0 20px 0 17px;
+  max-width: 185px;
+  padding: 0 20px 12px 17px;
   font-weight: 500;
   font-size: 16px;
   line-height: 16px;
@@ -1911,6 +1912,7 @@ a {
 }
 .objects__slider-2-link:hover::before {
   width: calc(100% + 17px);
+  min-height: calc(100% + 12px);
   background-color: #faf5f1;
 }
 .objects__slider-2-link:hover::after {
