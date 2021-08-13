@@ -67,14 +67,8 @@ let tab = function() {
 
 tab();
 
-let tabInner = function() {
-
-  function selectTab(evt) {
-
-    this.classList.add("button__tab--active");
-    tabName = this.getAttribute("data-tab");
-    selectTabContent(tabName);
-  }
+/*let tabInner = function() {
+  let cardsBlock = document.querySelectorAll(".objects__card-slider");
 
   function selectTabContent(tabName) {
     cardsBlock.forEach(element => {
@@ -85,13 +79,15 @@ let tabInner = function() {
       }
     });
   };
-};
+};*/
 
 let tabLink = function() {
   let tabLinkBtn = document.querySelectorAll(".about__link");
   let cardsLinkBlock = document.querySelectorAll(".button__tab");
+  let cardsBlockSlider = document.querySelectorAll(".objects__card-slider");
   let tabLinkName;
-  const el = document.getElementById('objects');
+  let tabLinkSlider;
+  const objects = document.getElementById('objects');
 
 
   tabLinkBtn.forEach(element => {
@@ -100,10 +96,12 @@ let tabLink = function() {
 
   function selectLinkTab(evt) {
     evt.preventDefault();
-    el.scrollIntoView();
+    objects.scrollIntoView();
     tabLinkName = this.getAttribute("data-tab-objects");
     selectTabContent(tabLinkName);
-  }
+    tabLinkSlider = this.getAttribute("data-tab-slider");
+    selectTabSlider(tabLinkSlider);
+  };
 
   function selectTabContent(tabLinkName) {
     cardsLinkBlock.forEach(element => {
@@ -112,7 +110,17 @@ let tabLink = function() {
       } else {
         element.classList.remove("button__tab--active");
       }
-    });
+    })
+  };
+
+  function selectTabSlider(tabLinkSlider) {
+    cardsBlockSlider.forEach(element => {
+      if (element.classList.contains(tabLinkSlider)) {
+        element.classList.add("objects__card-slider--active");
+      } else {
+        element.classList.remove("objects__card-slider--active");
+      }
+    })
   };
 };
 
