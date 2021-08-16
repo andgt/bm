@@ -46,6 +46,7 @@
   color: @black1;
   border-radius: 0;
   z-index: 1;
+  outline: none;
 
   &::after {
     content: "";
@@ -60,7 +61,8 @@
     z-index: -1;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &::after {
       width: calc(100% + 10px);
     }
@@ -74,7 +76,8 @@
       height: 40px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       &::after {
         width: calc(100% + 20px);
       }
@@ -103,7 +106,8 @@
     background-color: @red;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     &::before {
       width: calc(100% - 10px);
       left: 10px;
@@ -116,7 +120,10 @@
       width: 18px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
+
       &::before {
         width: calc(100% - 20px);
         left: 20px;
