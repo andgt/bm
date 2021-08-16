@@ -309,6 +309,7 @@ a {
   color: #161b27;
   border-radius: 0;
   z-index: 1;
+  outline: none;
 }
 .button__tab::after {
   content: "";
@@ -322,7 +323,8 @@ a {
   transition: width 0.3s ease;
   z-index: -1;
 }
-.button__tab:hover::after {
+.button__tab:hover::after,
+.button__tab:focus::after {
   width: calc(100% + 10px);
 }
 @media (min-width: 768px) {
@@ -333,7 +335,8 @@ a {
     width: 40px;
     height: 40px;
   }
-  .button__tab:hover::after {
+  .button__tab:hover::after,
+  .button__tab:focus::after {
     width: calc(100% + 20px);
   }
 }
@@ -356,7 +359,8 @@ a {
 .button__tab--active::after {
   background-color: #cc123b;
 }
-.button__tab--active:hover::before {
+.button__tab--active:hover::before,
+.button__tab--active:focus::before {
   width: calc(100% - 10px);
   left: 10px;
 }
@@ -365,7 +369,12 @@ a {
     left: 20px;
     width: 18px;
   }
-  .button__tab--active:hover::before {
+  .button__tab--active:hover,
+  .button__tab--active:focus {
+    outline: none;
+  }
+  .button__tab--active:hover::before,
+  .button__tab--active:focus::before {
     width: calc(100% - 20px);
     left: 20px;
   }
@@ -849,10 +858,10 @@ a {
   background-color: transparent;
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='20' fill='%23CC123B'/%3E%3Cpath d='M23 12L15 20L23 28' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
   z-index: 10;
-  transition: 0.3s ease;
 }
 .slick-arrow:hover {
   transform: scale(1.05);
+  transition: 0.3s ease;
 }
 .slick-next {
   transform: rotate(180deg);
@@ -1823,10 +1832,15 @@ a {
 .objects__card-slider {
   visibility: hidden;
   height: 0;
+  opacity: 0.2;
+  transform: translateX(-100px);
 }
 .objects__card-slider--active {
   visibility: visible;
   height: auto;
+  opacity: 1;
+  transition: 0.8s ease;
+  transform: translateX(0);
 }
 .objects__slider {
   position: relative;

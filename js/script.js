@@ -30,10 +30,6 @@ let menuFixed = function() {
   }
 };
 
-window.onscroll = function() {
-  menuFixed();
-};
-
 // Табы
 
 let tab = function() {
