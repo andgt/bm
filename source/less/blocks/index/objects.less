@@ -46,10 +46,17 @@
   }
 }
 
+/* Правки в слайдере 18.08 start*/
+
 .objects__card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
+  position: relative;
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transform: translateX(-100px);
 
   @media (min-width: @tablet-width) {
     grid-template-columns: minmax(min-content, 584px) minmax(426px, 674px);
@@ -58,8 +65,27 @@
   }
 }
 
-.objects__card {
+.objects__card-slider--active .objects__card-container--active {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   position: relative;
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  transition: 0.8s ease;
+  transform: translateX(0);
+
+  @media (min-width: @tablet-width) {
+    grid-template-columns: minmax(min-content, 584px) minmax(426px, 674px);
+    align-items: center;
+    gap: 0;
+  }
+}
+
+/* Правки в слайдере 18.08 end*/
+
+.objects__card {
   .offset(0; 39px 20px 37px 25px);
   background-color: @white;
 

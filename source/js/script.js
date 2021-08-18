@@ -22,13 +22,13 @@ buttonToggle.addEventListener('click', function() {
 
 // Фиксированное меню
 
-let menuFixed = function() {
+/*let menuFixed = function() {
   if (window.pageYOffset > 10) {
     headerMenu.classList.add("header__fixed");
   } else {
     headerMenu.classList.remove("header__fixed");
   }
-};
+};*/
 
 // Табы
 
@@ -36,8 +36,10 @@ let tab = function() {
   let tabBtn = document.querySelectorAll(".button__tab");
   let cardsBlock = document.querySelectorAll(".objects__card-slider");
   let objectsSlickMin = document.querySelectorAll(".objects__slider-2");
+  let cardsInnerMin = document.querySelectorAll(".objects__card-container");
   let tabName;
   let tabMin;
+  let tabInnerNames;
 
   tabBtn.forEach(element => {
     element.addEventListener("click", selectTab)
@@ -54,6 +56,8 @@ let tab = function() {
     tabMin = this.getAttribute("data-slick-min");
     selectTabContent(tabName);
     selectSlickMin(tabMin);
+    tabInnerNames = this.getAttribute("data-card-inner");
+    selectTabInner(tabInnerNames);
   }
 
   function selectTabContent(tabName) {
@@ -75,6 +79,16 @@ let tab = function() {
       }
     });
   };
+
+  function selectTabInner(tabInnerNames) {
+    cardsInnerMin.forEach(element => {
+      if (element.classList.contains(tabInnerNames)) {
+        element.classList.add("objects__card-container--active");
+      } else {
+        element.classList.remove("objects__card-container--active");
+      }
+    });
+  };
 };
 
 tab();
@@ -87,11 +101,12 @@ let tabLink = function() {
   let tabLinkName;
   let tabLinkSlider;
   let tabMin;
+
   const objects = document.getElementById('objects');
 
 
   tabLinkBtn.forEach(element => {
-    element.addEventListener("click", selectLinkTab)
+    element.addEventListener("click", selectLinkTab);
   });
 
   function selectLinkTab(evt) {
@@ -136,7 +151,33 @@ let tabLink = function() {
   };
 };
 
-tabLink();
+let tabInner = function () {
+  let btnInner = document.querySelectorAll(".objects__slider-2-link");
+  let cardsInner = document.querySelectorAll(".objects__card-container");
+  let tabInnerName;
+
+  btnInner.forEach(element => {
+    element.addEventListener("click", selectTab);
+  });
+
+  function selectTab(evt) {
+    evt.preventDefault();
+    tabInnerName = this.getAttribute("data-tab-inner");
+    selectTabContent(tabInnerName);
+  }
+
+  function selectTabContent(tabInnerName) {
+    cardsInner.forEach(element => {
+      if (element.classList.contains(tabInnerName)) {
+        element.classList.add("objects__card-container--active");
+      } else {
+        element.classList.remove("objects__card-container--active");
+      }
+    });
+  };
+};
+
+tabInner();
 
 // Кнопка наверх
 
@@ -155,6 +196,6 @@ let scrollUpButton = function () {
 };
 
 window.onscroll = function() {
-  menuFixed();
+  /*menuFixed();*/
   scrollUpButton();
 };
