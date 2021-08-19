@@ -947,6 +947,9 @@ a {
 .slick-min .slick-arrow {
   top: 42%;
 }
+.slick-min .slick-disabled {
+  opacity: 0.7;
+}
 .slick-min .slick-prev {
   left: 30px;
 }
@@ -2069,6 +2072,7 @@ a {
 }
 @media (min-width: 1920px) {
   .objects__slider-2 {
+    display: flex;
     width: 1920px;
   }
 }

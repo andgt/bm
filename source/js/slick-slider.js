@@ -19,21 +19,44 @@ $(document).ready(function() {
     speed: 1000,
     slidesToShow: 2,
     autoplay: false,
-    initialSlide: 5,
-    variableWidth: true,
+    initialSlide: 0,
+    mobileFirst: true,
+    infinite: false,
+    variableWidth: false,
     responsive: [
       {
         breakpoint: 1400,
         settings: {
           slidesToShow: 3,
+          infinite: false,
         },
-        breakpoint: 1920,
-        settings: {
-          slidesToShow: 5,
-        }
+        breakpoint: 1919,
+        settings: "unslick"
       }
     ]
   });
+});
+
+$(window).resize(function() {
+  if (window.innerWidth > 1535 && window.innerWidth < 1919) {
+    $('.slick-min').not('.slick-initialized').slick({
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      infinite: false,
+      speed: 1000
+    });
+  } else if (window.innerWidth >= 768 && window.innerWidth < 1536) {
+    $('.slick-min').not('.slick-initialized').slick({
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      infinite: false,
+      speed: 1000
+    })
+  } else {
+      $('.slick-min').slick('unslick');
+    }
 });
 
 $(document).ready(function() {
