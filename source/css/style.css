@@ -2050,13 +2050,6 @@ a {
 }
 .objects__slider-2 {
   display: none;
-  /*@media (min-width: @desktop-width) {
-    width: 1152px;
-  }
-
-  @media (min-width: 1600px) {
-    width: 1536px;
-  }*/
 }
 @media (min-width: 768px) {
   .objects__slider-2 {
