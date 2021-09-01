@@ -6,8 +6,6 @@ let mainNav = document.querySelector('.main-nav');
 let buttonToggle = document.querySelector('.main-nav__button-toggle');
 let headerMenu = document.querySelector(".header");
 
-mainNav.classList.remove('main-nav--no-js');
-
 buttonToggle.addEventListener('click', function() {
   if (mainNav.classList.contains('main-nav--closed')) {
     mainNav.classList.remove('main-nav--closed');
@@ -28,6 +26,27 @@ let menuFixed = function() {
   } else {
     headerMenu.classList.remove("header__fixed");
   }
+};
+
+// Кнопка наверх
+
+let scrollUpButton = function () {
+  let scrollUp = document.querySelector(".button__scroll-up");
+
+  if (window.pageYOffset > 100) {
+    scrollUp.classList.add("button__scroll-up--showed");
+  } else {
+    scrollUp.classList.remove("button__scroll-up--showed");
+  }
+
+  scrollUp.onclick = function (evt) {
+    window.scrollTo(0, 0);
+  };
+};
+
+window.onscroll = function() {
+  menuFixed();
+  scrollUpButton();
 };
 
 // Табы
@@ -195,23 +214,94 @@ let tabInner = function () {
 
 tabInner();
 
-// Кнопка наверх
+// Слайдер
 
-let scrollUpButton = function () {
-  let scrollUp = document.querySelector(".button__scroll-up");
+let sliderItems = document.querySelectorAll(".objects__slider-2-wrapper");
+let btnLeft = document.querySelector(".slick-arrow--min-left");
+let btnRight = document.querySelector(".slick-arrow--min-right");
+let sliderList = document.querySelector(".slick-min__wrapper");
+let offset = 0;
 
-  if (window.pageYOffset > 100) {
-    scrollUp.classList.add("button__scroll-up--showed");
-  } else {
-    scrollUp.classList.remove("button__scroll-up--showed");
+function slider() {
+  let sliderWidthDesktop;
+  let sliderItemMax;
+  /*for (let sliderItem of sliderItems) {
+    sliderWidthDesktop = sliderItem.offsetWidth + parseInt(getComputedStyle(sliderItem).marginRight) + parseInt(getComputedStyle(sliderItem).marginLeft);
+    sliderItemMax = sliderWidthDesktop * (sliderItems.length-1);
+  }*/
+
+  sliderItems.forEach(element => {
+    sliderWidthDesktop = sliderItem.offsetWidth;
+    sliderItemMax = sliderWidthDesktop * (sliderItems.length-1);
+  })
+
+  console.log(sliderItems.length);
+
+  btnRight.onclick = function () {
+    offset += sliderWidthDesktop;
+
+    if (offset > sliderItemMax) {
+      offset = 0;
+    }
+
+    sliderList.style.left = -offset + "px";
+  };
+
+  btnLeft.onclick = function () {
+    offset = offset - sliderWidthDesktop;
+
+    if (offset < 0) {
+      offset = sliderItemMax;
+    }
+
+    sliderList.style.left = -offset + "px";
+  };
+}
+
+function mobileSlider() {
+  let sliderWidth;
+  let sliderItemMaxMobile;
+  for (let sliderItem of sliderItems) {
+    sliderWidth = sliderItem.offsetWidth + (parseInt(getComputedStyle(sliderItem).marginRight) + parseInt(getComputedStyle(sliderItem).marginLeft));
+    sliderItemMaxMobile = sliderWidth * (sliderItems.length-1);
   }
 
-  scrollUp.onclick = function (evt) {
-    window.scrollTo(0, 0);
-  };
-};
+  btnRight.onclick = function () {
+    offset += sliderWidth;
 
-window.onscroll = function() {
-  menuFixed();
-  scrollUpButton();
-};
+    if (offset > sliderItemMaxMobile) {
+      offset = 0;
+    }
+
+    sliderList.style.left = -offset + "px";
+  };
+
+  btnLeft.onclick = function () {
+    offset = offset - sliderWidth;
+
+    if (offset < 0) {
+      offset = sliderItemMaxMobile;
+    }
+
+    sliderList.style.left = -offset + "px";
+  };
+}
+
+if (window.innerWidth < 1400) {
+  window.onload = mobileSlider();
+} else {
+  window.onload = slider();
+}
+
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 1399) {
+    slider();
+  }
+});
+
+window.addEventListener("resize", function() {
+  if (window.innerWidth < 1400) {
+    mobileSlider();
+  }
+});
+

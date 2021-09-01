@@ -13,7 +13,7 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
+/*$(document).ready(function() {
   $('.slick-min').slick({
     arrows: true,
     speed: 1000,
@@ -43,7 +43,7 @@ $(window).resize(function() {
   } else {
       $('.slick-min').slick('unslick');
     }
-});
+});*/
 
 $(document).ready(function() {
   $('.slick-partners').slick({

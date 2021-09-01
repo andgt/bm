@@ -989,6 +989,19 @@ a {
 .slick-doc .slick-next {
   right: 0;
 }
+.slick-min__wrapper {
+  display: flex;
+  position: relative;
+}
+.slick-arrow--min {
+  top: 40%;
+  left: 10px;
+}
+.slick-arrow--min-right {
+  left: auto;
+  right: 10px;
+  transform: rotate(180deg);
+}
 .footer {
   position: relative;
   margin: 0;
@@ -1921,7 +1934,6 @@ a {
     margin: 0 auto;
   }
 }
-/* Правки в слайдере 18.08 start*/
 .objects__card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1959,7 +1971,6 @@ a {
     gap: 0;
   }
 }
-/* Правки в слайдере 18.08 end*/
 .objects__card {
   margin: 0;
   padding: 39px 20px 37px 25px;
@@ -2053,21 +2064,17 @@ a {
 }
 @media (min-width: 768px) {
   .objects__slider-2 {
+    position: relative;
     display: flex;
     visibility: hidden;
-    position: relative;
-    width: 768px;
     height: 0;
-    margin: 0 auto;
   }
 }
-@media (min-width: 1920px) {
-  .objects__slider-2 {
-    display: flex;
-    width: 1920px;
-  }
+.track {
+  overflow: hidden;
 }
 .objects__slick-min {
+  overflow: hidden;
   visibility: visible;
   height: auto;
 }
@@ -2078,12 +2085,14 @@ a {
   .objects__slider-2-wrapper {
     position: relative;
     display: flex;
+    flex-shrink: 0;
+    flex-basis: 25%;
     height: 200px;
   }
 }
 @media (min-width: 1400px) {
   .objects__slider-2-wrapper {
-    width: 384px;
+    flex-basis: 20%;
   }
 }
 @media (min-width: 768px) {
@@ -2092,15 +2101,18 @@ a {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    min-width: 0;
     filter: brightness(50%);
+    transition: 0.3s linear;
+  }
+  .object__slider-img--line:hover {
+    filter: brightness(65%);
   }
 }
 .objects__slider-2-link {
   position: absolute;
   display: inline-block;
   top: 94px;
-  left: 95px;
+  left: 15%;
   min-width: 0;
   max-width: 185px;
   padding: 0 20px 12px 17px;
@@ -2144,6 +2156,11 @@ a {
 }
 .objects__slider-2-link:hover::after {
   background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4.71527H14M14 4.71527L9.91667 1.52466M14 4.71527L9.91667 7.90588' stroke='%23cc123b' stroke-width='1.5'/%3E%3C/svg%3E%0A");
+}
+@media (min-width: 1400px) {
+  .objects__slider-2-link {
+    left: 95px;
+  }
 }
 .personal {
   margin: 0;
